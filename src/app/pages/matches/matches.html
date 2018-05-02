@@ -1,0 +1,268 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="black" data-image="../assets/img/sidebar-1.jpg">
+      <div class="sidebar-wrapper">
+          <div class="logo">
+              <a href="#" class="simple-text">
+                  دوري ستار
+              </a>
+          </div>
+          <ul class="nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/">
+                      <i class="nc-icon nc-chart-pie-35"></i>
+                      <p>اللوحة الرئيسية</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="artical">
+                      <i class="nc-icon nc-notes"></i>
+                      <p>المقالات</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="news">
+                      <i class="nc-icon nc-paper-2"></i>
+                      <p>الاخبار</p>
+                  </a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="matches">
+                      <i class="nc-icon nc-tv-2"></i>
+                      <p>المباريات</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="tables">
+                      <i class="nc-icon nc-bullet-list-67"></i>
+                      <p>جدول الترتيب</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="media">
+                      <i class="nc-icon nc-album-2"></i>
+                      <p>صور وفيديو</p>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg" color-on-scroll="500">
+          <div class=" container-fluid  ">
+              <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <ul class="nav navbar-nav mr-auto">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">
+                              <i class="nc-icon nc-zoom-split"></i>
+                              <span class="d-lg-block">&nbsp;البحث</span>
+                          </a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#pablo">
+                              <span class="no-icon">تسجيل الخروج</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="container pad">
+      <div class="content dir">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">إضافة مباراة</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>الدوري</label>
+                                            <select name="league" [(ngModel)]="league" class="form-control" size="1">
+                                              <option value="wc">كأس العالم 2018</option>
+                                              <option value="sa">الدوري السعودي</option>
+                                              <option value="en">الدوري الانجليزي</option>
+                                              <option value="es">الدوري الاسباني</option>
+                                              <option value="it">الدوري الايطالي</option>
+                                              <option value="ge">الدوري الالماني</option>
+                                              <option value="fr">الدوري الفرنسي</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group form">
+                                          <label>الفريق</label>
+                                          <input type="text" [(ngModel)]="home" name="home" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                      <div class="form-group form">
+                                          <label>الشعار</label>
+                                          <input type="text" [(ngModel)]="home_bdg" name="home_bdg" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group form">
+                                          <label>الضيف</label>
+                                          <input type="text" [(ngModel)]="away" name="away" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                      <div class="form-group form">
+                                          <label>الشعار</label>
+                                          <input type="text" [(ngModel)]="away_bdg" name="away_bdg" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group form">
+                                          <label>اليوم</label>
+                                          <input type="date" [(ngModel)]="day" name="day" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                      <div class="form-group form">
+                                          <label>الوقت</label>
+                                          <input type="time" [(ngModel)]="time" name="time" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group form">
+                                          <label>الملعب</label>
+                                          <input type="text" [(ngModel)]="field" name="field" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                      <div class="form-group form">
+                                          <label>سعة الملعب</label>
+                                          <input type="text" [(ngModel)]="audi" name="audi" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group form">
+                                          <label>القنوات الناقلة</label>
+                                          <input type="text" [(ngModel)]="tv" name="tv" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                      <div class="form-group form">
+                                          <label>المعلق</label>
+                                          <input type="text" [(ngModel)]="comm" name="comm" class="form-control" placeholder="" value="">
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group form">
+                                          <label>الهاشتاق</label>
+                                          <input type="text" [(ngModel)]="tag" name="tag" class="form-control" placeholder="" value="#">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                    <div class="form-group form">
+                                        <label>الحكم</label>
+                                        <input type="text" [(ngModel)]="ref" name="ref" class="form-control" placeholder="" value="">
+                                    </div>
+                                </div>
+                                </div>
+                                <input type="submit" value="إضافة المباراة" (click)="addMat()" class="btn btn-info btn-fill pull-left">
+                                <div class="clearfix"></div>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    </div>
+
+    <ul *ngFor="let post of match | async">
+      <li>
+        <strong>{{ post.league}}</strong>
+        <br>
+        {{ post.home }}
+        <br>
+        {{ post.home_bdg }}
+        <br>
+        {{ post.away }}
+        <br>
+        {{ post.away_bdg }}
+        <br>
+        {{ post.day }}
+        <br>
+        {{ post.time }}
+        <br>
+        {{ post.field }}
+        <br>
+        {{ post.ref }}
+        <br>
+        {{ post.tv }}
+        <br>
+        {{ post.comm }}
+        <br>
+        {{ post.tag }}
+      </li>
+    </ul>
+
+<footer class="footer">
+  <div class="container">
+      <nav>
+          <ul class="footer-menu">
+              <li>
+                  <a href="/">
+                      الرئيسية
+                  </a>
+              </li>
+              <li>
+                  <a href="artical">
+                      المقالات
+                  </a>
+              </li>
+              <li>
+                  <a href="news">
+                      الاخبار
+                  </a>
+              </li>
+              <li>
+                  <a href="matches">
+                      المباريات
+                  </a>
+              </li>
+              <li>
+                  <a href="tables">
+                      الترتيب
+                  </a>
+              </li>
+              <li>
+                  <a href="media">
+                      صور وفيديو
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      <nav>
+          <p class="copyright text-center">
+              ©
+              <a href="http://a3zdv.ml" target="_blank">Abdullah Zaher</a>, made with <span class='text-danger'>♥</span> in Dammam
+          </p>
+      </nav>
+  </div>
+</footer>
+</div>
+</div>

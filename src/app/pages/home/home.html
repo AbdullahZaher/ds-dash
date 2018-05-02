@@ -1,0 +1,212 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="black" data-image="../assets/img/sidebar-1.jpg">
+      <div class="sidebar-wrapper">
+          <div class="logo">
+              <a href="#" class="simple-text">
+                  دوري ستار
+              </a>
+          </div>
+          <ul class="nav">
+              <li class="nav-item active">
+                  <a class="nav-link" href="/">
+                      <i class="nc-icon nc-chart-pie-35"></i>
+                      <p>اللوحة الرئيسية</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="artical">
+                      <i class="nc-icon nc-notes"></i>
+                      <p>المقالات</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="news">
+                      <i class="nc-icon nc-paper-2"></i>
+                      <p>الاخبار</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="matches">
+                      <i class="nc-icon nc-tv-2"></i>
+                      <p>المباريات</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="tables">
+                      <i class="nc-icon nc-bullet-list-67"></i>
+                      <p>جدول الترتيب</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="media">
+                      <i class="nc-icon nc-album-2"></i>
+                      <p>صور وفيديو</p>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg" color-on-scroll="500">
+          <div class=" container-fluid  ">
+              <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <ul class="nav navbar-nav mr-auto">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">
+                              <i class="nc-icon nc-zoom-split"></i>
+                              <span class="d-lg-block">&nbsp;البحث</span>
+                          </a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#pablo">
+                              <span class="no-icon">تسجيل الخروج</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="container pad">
+      <div class="content">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="card ">
+                          <div class="card-header ">
+                              <h4 class="card-title">إحصائيات المتابعين</h4>
+                              <p class="card-category">آخر تحديثات الحساب</p>
+                          </div>
+                          <div class="card-body ">
+                              <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+                          </div>
+                          <div class="card-footer ">
+                              <div class="legend">
+                                  <i class="fa fa-circle text-info"></i> متابع
+                                  <i class="fa fa-circle text-danger"></i> جديد
+                                  <i class="fa fa-circle text-warning"></i> إلغاء المتابعة
+                              </div>
+                              <hr>
+                              <div class="stats">
+                                  <i class="fa fa-clock-o"></i> آخر إحصائية منذ 2 ساعة
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card ">
+                          <div class="card-header ">
+                              <h4 class="card-title">سلوك المتابعين</h4>
+                              <p class="card-category">إحصائيات خلال 24 ساعة</p>
+                          </div>
+                          <div class="card-body ">
+                              <div id="chartHours" class="ct-chart"></div>
+                          </div>
+                          <div class="card-footer ">
+                              <div class="legend">
+                                  <i class="fa fa-circle text-info"></i> Open
+                                  <i class="fa fa-circle text-danger"></i> Click
+                                  <i class="fa fa-circle text-warning"></i> Click Second Time
+                              </div>
+                              <hr>
+                              <div class="stats">
+                                  <i class="fa fa-history"></i> آخر إحصائية منذ 3 ساعات
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="card ">
+                          <div class="card-header ">
+                              <h4 class="card-title">إحصائيات 2018</h4>
+                              <p class="card-category">جميع محتويات التطبيق</p>
+                          </div>
+                          <div class="card-body ">
+                              <div id="chartActivity" class="ct-chart"></div>
+                          </div>
+                          <div class="card-footer ">
+                              <div class="legend">
+                                  <i class="fa fa-circle text-info"></i> المتابعين
+                                  <i class="fa fa-circle text-danger"></i> المشاهدات
+                              </div>
+                              <hr>
+                              <div class="stats">
+                                  <i class="fa fa-check"></i> تم مراجعة البيانات
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="card  card-tasks">
+                          <div class="card-header ">
+                              <p class="card-category">
+                                  <input type="text" [(ngModel)]="noteText" name="noteText" class="form-notes edit" placeholder="هل تريد إضافة ملاحظة؟" (keyup.enter)="addNote()">
+                              </p>
+                          </div>
+                          <div class="card-body">
+                            <ul *ngFor="let note of items | async">
+                              <li class="note-list" (dblclick)="deleteNote(note.id)">
+                                <h6 class="text-right">
+                                  <i class="fa fa-angle-left"></i>
+                                  {{ note.data.noteText}}
+                                  <span class="note-date">{{note.data.DateTime | date: 'dd/MM'}} <a href="#" (click)="deleteNote(note.id)" title="حذف!!"><i class="fa fa-trash fa-color"></i></a></span>
+                                </h6>
+                              </li>
+                            </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+<footer class="footer">
+  <div class="container">
+      <nav>
+          <ul class="footer-menu">
+              <li>
+                  <a href="/">
+                      الرئيسية
+                  </a>
+              </li>
+              <li>
+                  <a href="artical">
+                      المقالات
+                  </a>
+              </li>
+              <li>
+                  <a href="news">
+                      الاخبار
+                  </a>
+              </li>
+              <li>
+                  <a href="matches">
+                      المباريات
+                  </a>
+              </li>
+              <li>
+                  <a href="tables">
+                      الترتيب
+                  </a>
+              </li>
+              <li>
+                  <a href="media">
+                      صور وفيديو
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      <nav>
+          <p class="copyright text-center">
+              ©
+              <a href="http://a3zdv.ml" target="_blank">Abdullah Zaher</a>, made with <span class='text-danger'>♥</span> in Dammam
+          </p>
+      </nav>
+  </div>
+</footer>
+</div>
+</div>
+

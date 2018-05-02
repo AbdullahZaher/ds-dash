@@ -1,0 +1,10 @@
+.dir{
+  direction: rtl;
+  text-align: right;
+  font-family: "El Messiri", "Helvetica Neue", Arial, sans-serif;
+}
+
+.form{
+  margin: 10px;
+  width: 94%;
+}

@@ -1,0 +1,43 @@
+.foot {
+  width: 100%
+}
+
+.form-notes {
+    border: none;
+    border-bottom: 1px solid #e3e3e3;
+    width: 100%;
+    padding: 6px 10px;
+    padding-right: 25px;
+    margin: 4px 0;
+    text-align: right;
+    direction: rtl;
+    color: #dc3545;
+}
+
+.edit {
+    background-image: url('../../../assets/img/icon/edit.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 20px;
+}
+
+.note-list {
+  direction: rtl;
+  margin: 0 auto;
+  padding-right: 4px;
+  list-style-type: none;
+  width: 100%;
+  color: grey;
+}
+
+.note-date {
+  position: absolute;
+  left: 5px;
+}
+
+.fa-color {
+  color: gray;
+}
+.fa-color:hover {
+  color: #dc3545;
+}

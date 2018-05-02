@@ -1,0 +1,216 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="black" data-image="../assets/img/sidebar-1.jpg">
+      <div class="sidebar-wrapper">
+          <div class="logo">
+              <a href="#" class="simple-text">
+                  دوري ستار
+              </a>
+          </div>
+          <ul class="nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/">
+                      <i class="nc-icon nc-chart-pie-35"></i>
+                      <p>اللوحة الرئيسية</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="artical">
+                      <i class="nc-icon nc-notes"></i>
+                      <p>المقالات</p>
+                  </a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="news">
+                      <i class="nc-icon nc-paper-2"></i>
+                      <p>الاخبار</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="matches">
+                      <i class="nc-icon nc-tv-2"></i>
+                      <p>المباريات</p>
+                  </a>
+              </li>
+              <li>
+                  <a class="nav-link" href="tables">
+                    <i class="nc-icon nc-bullet-list-67"></i>
+                    <p>جدول الترتيب</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="media">
+                    <i class="nc-icon nc-album-2"></i>
+                    <p>صور وفيديو</p>
+                </a>
+            </li>
+          </ul>
+      </div>
+  </div>
+  <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg" color-on-scroll="500">
+          <div class=" container-fluid  ">
+              <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <ul class="nav navbar-nav mr-auto">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">
+                              <i class="nc-icon nc-zoom-split"></i>
+                              <span class="d-lg-block">&nbsp;البحث</span>
+                          </a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#pablo">
+                              <span class="no-icon">تسجيل الخروج</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="container pad">
+      <div class="content dir">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">إضافة خبر</h4>
+                        </div>
+                        <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="title">العنوان</label>
+                                            <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group form">
+                                            <label for="img">الصورة</label>
+                                            <input type="text" [(ngModel)]="img" name="img" class="form-control" placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 px-1">
+                                        <div class="form-group form">
+                                            <label for="slideImg">صورة السلايد</label>
+                                            <input type="text" [(ngModel)]="slideImg" name="slideImg" class="form-control" placeholder="1125 عرض * 2436 طول" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <div class="form-group form">
+                                            <label for="keywords">الكلمات الدليلة</label>
+                                            <input type="text" [(ngModel)]="keywords" name="keywords" class="form-control" placeholder="" required >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="form-group">
+                                          <label for="desc">الوصف</label>
+                                          <input type="text" [(ngModel)]="desc" [maxlength]="150" name="desc" class="form-control" placeholder="" required >
+                                      </div>
+                                  </div>
+                              </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="text">النص</label>
+                                            <ckeditor [(ngModel)]="text" name="text" [config]="{uiColor: '#f7f7f8', language: 'ar', width: '100%'}"></ckeditor>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="إضافة الخبر" (click)="addNews()" class="btn btn-info btn-fill pull-left">
+                                <div class="row">
+                                    <div class="col-md-2 pr-1">
+                                        <div class="form-group form">
+                                          <div class="custom-control custom-checkbox text-left">
+                                            <input type="checkbox" [(ngModel)]="isShown" name="isShown" class="custom-control-input" id="customCheck1" value="True" checked>
+                                            <label class="custom-control-label" for="customCheck1">عرض الخبر</label>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pl-1">
+                                        <div class="form-group form">
+                                          <div class="custom-control custom-checkbox text-left">
+                                            <input type="checkbox" [(ngModel)]="isSlide" name="isSlide" class="custom-control-input" value="False" id="customCheck2">
+                                            <label class="custom-control-label" for="customCheck2">عرض السلايد</label>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <ul *ngFor="let post of items | async">
+    <li>
+      <strong>{{ post.title}}</strong>
+      <br>
+      {{ post.img }}
+      <br>
+      {{ post.slideImg }}
+      <br>
+      {{ post.desc }}
+      <br>
+      {{ post.keywords }}
+      <br>
+      {{ post.text }}
+    </li>
+  </ul>
+
+  <footer class="footer">
+    <div class="container">
+        <nav>
+            <ul class="footer-menu">
+                <li>
+                    <a href="/">
+                        الرئيسية
+                    </a>
+                </li>
+                <li>
+                    <a href="artical">
+                        المقالات
+                    </a>
+                </li>
+                <li>
+                    <a href="news">
+                        الاخبار
+                    </a>
+                </li>
+                <li>
+                    <a href="matches">
+                        المباريات
+                    </a>
+                </li>
+                <li>
+                    <a href="tables">
+                        الترتيب
+                    </a>
+                </li>
+                <li>
+                    <a href="media">
+                        صور وفيديو
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <p class="copyright text-center">
+                ©
+                <a href="http://a3zdv.ml" target="_blank">Abdullah Zaher</a>, made with <span class='text-danger'>♥</span> in Dammam
+            </p>
+        </nav>
+    </div>
+  </footer>
+  </div>
+  </div>
